@@ -26,7 +26,7 @@ poetry run python python.py
 Pandas
 
 ```bash
-poetry run python pandas.py
+poetry run python pandas_analise.py
 ```
 
 ## Enunciado
