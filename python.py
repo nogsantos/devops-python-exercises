@@ -1,4 +1,5 @@
 from collections import Counter
+from dataclasses import dataclass
 
 URL = 0
 EMPTY_LINE_1 = 1
@@ -22,15 +23,14 @@ class Utils:
         return "{:,}".format(number)
 
 
+@dataclass
 class Read:
-    distinct_hosts: list = []
-    http_code_status: list = []
-    total_of_bytes: list = []
-    top_5_url_not_found: list = []
-    line_read_error: list = []
-
-    def __init__(self, filename):
-        self.filename = filename
+    distinct_hosts = list()
+    http_code_status = list()
+    total_of_bytes = list()
+    top_5_url_not_found = list()
+    line_read_error = list()
+    filename: str
 
     def __from_file(self):
         with open(
@@ -114,6 +114,11 @@ class Read:
             print("Errors:", self.line_read_error)
 
     def run(self):
+        self.distinct_hosts = list()
+        self.http_code_status = list()
+        self.total_of_bytes = list()
+        self.top_5_url_not_found = list()
+        self.line_read_error = list()
         self.__from_file().__show()
 
 
