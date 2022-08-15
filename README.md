@@ -4,7 +4,7 @@ Análise de dados de logs. Prof. Leonardo Afonso Amorim.
 
 **Requerimentos**
 
-- Python >= 9.0
+- Python >= 3.9
 - [poetry](https://python-poetry.org/docs/#installation)
 
 **Setup**
