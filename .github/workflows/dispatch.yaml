@@ -1,0 +1,15 @@
+name: Dispatch test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: contains('["kingthorin","lpoulter"]', github.actor)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Hello
+      run: echo "hello"
+    - name: sleep
+      run: sleep 10
